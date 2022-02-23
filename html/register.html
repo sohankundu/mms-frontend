@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/register.css" />
+</head>
+
+<body>
+
+    <section>
+        <div class="banner">
+            <div class="container">
+                <div class="col col-lg-6">
+                    <h1 class="display-5 text-white">Medical Management System</h1>
+                </div>
+                <div clas="col col-lg-6"></div>
+            </div>
+        </div>
+    </section>
+
+
+    <section>
+        <div class="container text-center main-content justify-content-md-center">
+            <div class="row justify-content-md-center">
+
+                <div class="col col-lg-5 col-md-8 col-sm-10 intro-text">
+
+                    <h3>Welcome User!</h3>
+                    <p class="lead">Please register yourself to book appointments with our specialist doctors and manage
+                        your
+                        upcoming
+                        appointments seamlessly.
+                    </p>
+
+                    <p>If you are already registered, please <a href="../index.html">login</a> to view your upcoming
+                        appointments and book new appointments.</p>
+
+                </div>
+
+                <div class="col-lg-1"></div>
+
+
+                <div class="col col-lg-6 col-md-8 col-sm-10">
+
+                    <div class="card">
+                        <div class="card-title mt-4">
+                            <h4>Patient Registration</h4>
+                            <small>Register here if you are a new patient.</small>
+                        </div>
+                        <div class="card-content">
+                            <form action="" method="" autocomplete="off">
+                                <div class="row form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="fname">First Name</label>
+                                        <input type="text" class="form-control" id="fname"
+                                            placeholder="Enter your first name" required>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="lname">Last Name</label>
+                                        <input type="text" class="form-control" id="lname"
+                                            placeholder="Enter your last name" required>
+                                    </div>
+                                </div>
+
+                                <div class="row form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="email">Email</label>
+                                        <input type="email" class="form-control" id="email"
+                                            placeholder="Enter your email" required>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="phone">Phone</label>
+                                        <input type="tel" class="form-control" id="phone"
+                                            placeholder="Enter your phone number" required>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="address">Address</label>
+                                    <input type="textarea" class="form-control" id="address"
+                                        placeholder="Enter your address" required>
+                                </div>
+
+                                <div class="row form-row">
+                                    <div class="form-group col-md-7">
+                                        <label for="gender">Gender</label>
+                                        <div class="row radio-group">
+                                            <div class="form-check col-5">
+                                                <input class="form-check-input" type="radio" name="gender" id="male"
+                                                    value="male" required>
+                                                <label class="form-check-label" for="male">
+                                                    Male
+                                                </label>
+                                            </div>
+                                            <div class="form-check col-5">
+                                                <input class="form-check-input" type="radio" name="gender" id="female"
+                                                    value="female" required>
+                                                <label class="form-check-label" for="female">
+                                                    Female
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-md-5">
+                                        <label for="dob">Date of Birth</label>
+                                        <input type="date" class="form-control" id="dob"
+                                            placeholder="Enter your date of birth" required>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="password">Password</label>
+                                    <input type="password" class="form-control" id="password" placeholder="Password"
+                                        required>
+                                </div>
+                                <button type="submit" class="btn btn-login w-100 mt-2 mb-2">REGISTER</button>
+                            </form>
+                            <div class="card-bt">
+                                <hr class="m-2">
+                                <small>
+                                    Already have an account?
+                                </small>
+                                <br>
+                                <a href="../index.html">Login Here</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container-fluid text-center text-white footer mt-2">
+        <div class="row p-2">
+            <div class="col-md-4 col-lg-4">
+                <small>ABC Hospitals Private Limited</small>
+            </div>
+            <div class="col-md-4 col-lg-4">
+                <small>Contact: 999 9999 999</small>
+            </div>
+            <div class="col-md-4 col-lg-4">
+                <small>Email: contact@abchospitals.org</small>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+@import "index.css";
+
+.intro-text {
+    text-align: left;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    margin-bottom: 15rem;
+}
+
+.form-group {
+    text-align: left;
+    margin-bottom: 1rem;
+}
+
+.card {
+    margin-top: -14rem;
+    padding: 0 0.5rem;
+}
+
+.radio-group {
+    margin-left: 0.2rem;
+    margin-top: 0.2rem;
+}
