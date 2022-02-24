@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width-device-width, initial-scale=1">
+    <title>Table pagination</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet"/>
+</head>
+<body>
+    <div class="container1" style="margin-top:35px">
+        <h4>Select no of rows</h4>
+        <div class="form-group">
+            <select name="state" id="maxRows" class="form-control" style="width:150px;">
+                <option value="5000">Show all</option>
+                <option value="5">5</option>
+                <option value="10">10</option>
+               
+            
+            </select>
+
+
+        </div>
+    
+    <table id="myTable" class="table table-bordered table-striped">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Mail</th>
+            <th>Phone</th>
+            <th>Address</th>
+
+        </tr>
+    </thead>
+        
+            <tbody>
+                <tr>
+                    <td>Den</td>
+                    <td>g@gmail.com</td>
+                    <td>87943562</td>
+                    <td>kol</td>
+
+                </tr>
+                <tr>
+                    <td>Doe</td>
+                    <td>g@gmail.com</td>
+                    <td>87943562</td>
+                    <td>kol</td>
+
+                </tr>
+                <tr>
+                    <td>Deg</td>
+                    <td>g@gmail.com</td>
+                    <td>87943562</td>
+                    <td>kol</td>
+
+                </tr>
+                <tr>
+                    <td>peg</td>
+                    <td>g@gmail.com</td>
+                    <td>87943562</td>
+                    <td>kol</td>
+
+                </tr>
+                <tr><td>creg</td><td>g@gmail.com</td><td>87943562</td><td>kol</td></tr>
+                <tr><td>creg</td><td>g@gmail.com</td><td>87943562</td><td>kol</td></tr>
+                <tr><td>creg</td><td>g@gmail.com</td><td>87943562</td><td>kol</td></tr>
+                <tr><td>creg</td><td>g@gmail.com</td><td>87943562</td><td>kol</td></tr>
+                <tr><td>creg</td><td>g@gmail.com</td><td>87943562</td><td>kol</td></tr>
+                <tr><td>creg</td><td>g@gmail.com</td><td>87943562</td><td>kol</td></tr>
+                <tr><td>creg</td><td>g@gmail.com</td><td>87943562</td><td>kol</td></tr>
+                <tr><td>creg</td><td>g@gmail.com</td><td>87943562</td><td>kol</td></tr>
+                <tr><td>creg</td><td>g@gmail.com</td><td>87943562</td><td>kol</td></tr>
+                <tr><td>creg</td><td>g@gmail.com</td><td>87943562</td><td>kol</td></tr>
+                <tr><td>creg</td><td>g@gmail.com</td><td>87943562</td><td>kol</td></tr>
+                <tr><td>creg</td><td>g@gmail.com</td><td>87943562</td><td>kol</td></tr>
+                <tr><td>creg</td><td>g@gmail.com</td><td>87943562</td><td>kol</td></tr>
+                <tr><td>creg</td><td>g@gmail.com</td><td>87943562</td><td>kol</td></tr>
+                <tr><td>creg</td><td>g@gmail.com</td><td>87943562</td><td>kol</td></tr>
+                <tr><td>creg</td><td>g@gmail.com</td><td>87943562</td><td>kol</td></tr>
+                <tr><td>creg</td><td>g@gmail.com</td><td>87943562</td><td>kol</td></tr>
+                <tr><td>creg</td><td>g@gmail.com</td><td>87943562</td><td>kol</td></tr>
+                <tr><td>hey</td><td>g@gmail.com</td><td>87943562</td><td>kol</td></tr>
+
+            </tbody>
+
+        
+    </table>
+    <div class="pagination-container">
+        <nav>
+            <ul class="pagination"></ul>
+
+        </nav>
+
+    </div>
+    
+    </div>
+
+    <script
+    src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous"></script>
+    <script src="css/bootstrap.min.js"></script>
+    <script>
+        var table='#myTable'
+        $('#maxRows').on('change',function(){
+            $('.pagination').html('')
+            var trnum = 0
+            var maxRows=parseInt($(this).val())
+            var totalRows=$(table+' tbody tr').length
+            $(table+' tr:gt(0)').each(function(){
+                trnum++
+                if(trnum > maxRows){
+                    $(this).hide()
+                }
+                if(trnum <= maxRows){
+                    $(this).show()
+                }
+
+            })
+            if(totalRows>maxRows){
+                var pagenum=Math.ceil(totalRows/maxRows)
+                for(var i=1;i<=pagenum;){
+                    $('.pagination').append('<li class="page-item" data-page="'+i+'">\<span class="page-link">'+ i++ +'<span class="sr-only"></span></span>\</li>').show()
+
+                }
+            }
+            $('.pagination li:first-child').addClass('active')
+            $('.pagination li').on('click',function(){
+                var pageNum=$(this).attr('data-page')
+                var trIndex=0;
+                $('.pagination li').removeClass('active')
+                $(this).addClass('active')
+                $(table+' tr:gt(0)').each(function(){
+                    trIndex++
+                    if(trIndex>(maxRows*pageNum) || trIndex <=((maxRows*pageNum)-maxRows)){
+                        $(this).hide()
+                    } else{
+                        $(this).show()
+                    }
+                })
+            })
+
+        })
+        $(function(){
+            $('table tr:eq(0)').prepend('<th>ID</th>')
+            var id=0;
+            $('table tr:gt(0)').each(function(){
+                id++
+                $(this).prepend('<td>'+id+'</td>')
+            })
+        })
+
+    </script>
+
+</body>
+
+
+</html>
